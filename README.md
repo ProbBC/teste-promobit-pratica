@@ -11,7 +11,7 @@ O projeto foi desenvolvido com o framework CakePHP 4, PHP 7.4 e MySQL.
 ```bash
 docker-compose up -d
 ```
-3. Na primeira vez, o container irá realizar a instalação das dependências do projeto (composer install) em background, isso pode demorar um pouco.
+3. Na primeira vez, o container irá realizar a instalação das dependências do projeto (composer install) em background, isso pode demorar um pouco. A aplicação não irá funcionar enquanto o composer não completar a instalação, é importante esperar entre 1 a 5 minutos dependendo do hardware onde será testado o projeto.
 
 4. A aplicação estará disponibilizada em: http://localhost:2532
 
