@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  # MySQL database container
+  my-app-mysql:
+    image: "mysql:5.7.31"
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "cake"
+      MYSQL_USER: "cake"
+      MYSQL_PASSWORD: "cake"
+    ports:
+      - "2533:3306"
+    volumes:
+      - ./docker-scripts:/docker-entrypoint-initdb.d
+    command: [
+      "--general_log=1",
+      "--general_log_file=/var/log/mysql/general.log",
+      "--slow_query_log=1"
+    ]
+  # CakePHP container
+  my-app-cakephp:
+    image: "voquis/cakephp:7.4.13-apache-buster"
+    environment:
+      DATABASE_URL: "mysql://cake:cake@my-app-mysql/cake"
+      DEBUG: "true"
+      SECURITY_SALT: "abc123"
+    volumes:
+      - type: "bind"
+        source: "./"
+        target: "/var/www/html"
+    ports:
+      - "2532:80"
+  # Composer
+  composer:
+    image: composer/composer
+    volumes:
+      - type: "bind"
+        source: "./"
+        target: "/var/www/html"
+    working_dir: /var/www/html
+    command: install --ignore-platform-reqs

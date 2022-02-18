@@ -2,7 +2,24 @@
 
 O projeto foi desenvolvido com o framework CakePHP 4, PHP 7.4 e MySQL 8.0.
 
-## Instalação
+## Instalação com docker-compose
+
+1. Clone este repositório
+
+2. Rode na raiz do projeto:
+
+```bash
+docker-compose up -d
+```
+3. Na primeira vez, o container irá realizar a instalação das dependências do projeto (composer install), isso pode demorar um pouco.
+
+4. A aplicação estará disponibilizada em: http://localhost:2532
+
+5. Acesse http://localhost:2532/users/add para adicionar um usuário.
+
+6. Faça o login com o usuário criado e teste o sistema.
+
+## Instalação manual
 
 OBS: O CakePHP 4 funciona a partir do PHP 7.2 e necessita das extensões mbstring e intl.
 
