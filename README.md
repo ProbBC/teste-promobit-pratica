@@ -1,6 +1,6 @@
 # Desafio Promobit - Etapa Prática
 
-O projeto foi desenvolvido com o framework CakePHP 4, PHP 7.4 e MySQL 8.0.
+O projeto foi desenvolvido com o framework CakePHP 4, PHP 7.4 e MySQL.
 
 ## Instalação com docker-compose
 
@@ -11,7 +11,7 @@ O projeto foi desenvolvido com o framework CakePHP 4, PHP 7.4 e MySQL 8.0.
 ```bash
 docker-compose up -d
 ```
-3. Na primeira vez, o container irá realizar a instalação das dependências do projeto (composer install), isso pode demorar um pouco.
+3. Na primeira vez, o container irá realizar a instalação das dependências do projeto (composer install) em background, isso pode demorar um pouco.
 
 4. A aplicação estará disponibilizada em: http://localhost:2532
 
