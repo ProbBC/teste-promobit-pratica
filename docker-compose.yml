@@ -23,7 +23,7 @@ services:
     image: "voquis/cakephp:7.4.13-apache-buster"
     environment:
       DATABASE_URL: "mysql://cake:cake@my-app-mysql/cake"
-      DEBUG: "true"
+      DEBUG: "false"
       SECURITY_SALT: "abc123"
     volumes:
       - type: "bind"
